@@ -6,13 +6,18 @@ import org.springframework.stereotype.Service;
 import cn.whu.entity.User;
 import cn.whu.mapper.UserMapper;
 
-@Service
+@Service("UserserviceImpl")
 public class UserServiceImpl implements UserService{
 
-	@Autowired
+	/*@Autowired
 	 UserMapper userMapper;
 	public User findByUserName(String username) {
 		return userMapper.findByName(username);
+	}*/
+
+	public void setting(){
+
+		System.out.println("setting......service1111111");
 	}
 
 }

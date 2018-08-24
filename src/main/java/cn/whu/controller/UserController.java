@@ -10,13 +10,14 @@ import cn.whu.service.UserService;
 
 @Controller
 public class UserController {
-	@Autowired
+	/*@Autowired
 	 UserService userService;
 	@ResponseBody
 	@RequestMapping("/findByUserName")
 	public User findByUserName(String username) {
 		
 		return userService.findByUserName(username);
-	}
+	}*/
+
 	
 }
