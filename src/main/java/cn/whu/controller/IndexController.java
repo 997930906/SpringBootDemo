@@ -1,12 +1,9 @@
 package cn.whu.controller;
 
-import cn.whu.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 
@@ -16,7 +13,7 @@ public class IndexController {
 	/*@Autowired
 	private UserService userService;*/
 	//多实现类注入
-	@Resource(name="UserserviceImpl")
+	/*@Resource(name="UserserviceImpl")
 	private UserService userServiceImpl;
 
 	@RequestMapping(path={"/setting"})
@@ -24,7 +21,7 @@ public class IndexController {
 	public String setting() {
 		userServiceImpl.setting();
 		return "setting";
-	}
+	}*/
 
 	@RequestMapping("/index")
 	public String index() {
