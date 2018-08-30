@@ -25,7 +25,9 @@ public interface UserDao {
     void updatePassword(User user);
 
     @Delete({"delete from ", TABLE_NAME, " where id=#{id}"})
-    default void deleteById(int id) {
+    default void deleteById(int id) {}
 
-    }
+    @Select({"select ", SELECT_FIELDS, " from ", TABLE_NAME, " where name=#{name}"})
+    User selectByName(String name);
+
 }
