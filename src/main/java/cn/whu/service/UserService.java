@@ -4,7 +4,7 @@ import cn.whu.dao.LoginTicketDAO;
 import cn.whu.dao.UserDao;
 import cn.whu.model.LoginTicket;
 import cn.whu.model.User;
-import cn.whu.util.UserUtil;
+import cn.whu.util.WendaUtil;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -46,7 +46,7 @@ public class UserService {
         user.setSalt(UUID.randomUUID().toString().substring(0,5));
         user.setHeadUrl(String.format("http://images.nowcoder.com/head/%dt.png",
                 new Random().nextInt(1000)));
-        user.setPassword(UserUtil.MD5(password+user.getSalt()));
+        user.setPassword(WendaUtil.MD5(password+user.getSalt()));
 
         userDAO.addUser(user);
 
@@ -75,7 +75,7 @@ public class UserService {
             return map;
         }
 
-        if (!UserUtil.MD5(password+user.getSalt()).equals(user.getPassword())) {
+        if (!WendaUtil.MD5(password+user.getSalt()).equals(user.getPassword())) {
             map.put("msg", "密码不正确");
             return map;
         }
